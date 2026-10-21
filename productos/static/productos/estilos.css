@@ -1,0 +1,62 @@
+body {
+    background-color: #f5f6f8;
+    color: #212529;
+    min-height: 100vh;
+}
+
+.navbar-brand {
+    letter-spacing: 0.5px;
+}
+
+main {
+    min-height: 75vh;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.card-body {
+    border-radius: 12px;
+}
+
+.table {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+.form-control,
+.form-select {
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #495057;
+    box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.12);
+}
+
+.btn {
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+footer {
+    background-color: #ffffff;
+}
+
+.badge {
+    padding: 7px 10px;
+}
