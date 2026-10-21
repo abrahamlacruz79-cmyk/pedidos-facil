@@ -30,6 +30,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
+RENDER_HOST = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+
 ALLOWED_HOSTS = [
     host.strip()
     for host in os.environ.get("ALLOWED_HOSTS", "").split(",")
@@ -39,9 +41,10 @@ ALLOWED_HOSTS = [
 ALLOWED_HOSTS.extend([
     "localhost",
     "127.0.0.1",
-    "pedidofacil-vaqn.onrender.com",
 ])
 
+if RENDER_HOST:
+    ALLOWED_HOSTS.append(RENDER_HOST)
 
 # Application definition
 
