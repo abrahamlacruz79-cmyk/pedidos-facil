@@ -21,16 +21,21 @@ from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
+    # Panel de administración de Django
     path("admin/", admin.site.urls),
 
+    # Redirección de la página de inicio a la lista de productos (o puedes cambiarla a servicios si prefieres)
     path("", RedirectView.as_view(
         pattern_name="listar_productos",
         permanent=False
     ), name="inicio"),
 
+    # Rutas de las aplicaciones del sistema
     path("productos/", include("productos.urls")),
     path("pedidos/", include("pedidos.urls")),
+    path("servicios/", include("servicios.urls")),  # <--- Aquí integramos tu nuevo CRUD de servicios
 
+    # Sistema de Autenticación (Login / Logout)
     path(
         "login/",
         auth_views.LoginView.as_view(
@@ -38,13 +43,12 @@ urlpatterns = [
         ),
         name="login"
     ),
-
     path(
         "logout/",
         auth_views.LogoutView.as_view(),
         name="logout"
     ),
 
-    path("registro", views.registro, name="registro"),
-    
+    # Vista de registro de usuarios
+    path("registro/", views.registro, name="registro"),
 ]

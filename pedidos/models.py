@@ -33,3 +33,5 @@ class Pedido(models.Model):
 
     def __str__(self):
         return self.numero_pedido
+
+        
